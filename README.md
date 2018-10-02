@@ -1,15 +1,15 @@
 Aqualight
 =========
 
-A Arduino Sketch for a aquarium light with day-night-cycle and a smooth 10bit twighlight.
------------------------------------------------------------------------------------------
+A Arduino Sketch for a aquarium light with day-night-cycle and a smooth 10bit twilight.
+---------------------------------------------------------------------------------------
 
-I got a 60l aquarium with an small gloomy light. To
+I got a 60l aquarium with an small gloomy light. That needs to be improved.
 
-I glued a 1,8m 12V LED Stripe with 1800lm and a RA 90 Colorindex in the Header.
-It draws about 15W. These  30lm/l brightens the aquarium in a nice light. At day
+I glued a 1,8m 12V LED Stripe with 1800lm and a RA 90 colorindex in the header.
+It draws about 15W. These 30lm/l brightens the aquarium in a nice light. At day
 it is enough to let the plants grow. And at morning and evening its dimmed to a
-vastly lower value, which makes the aquarium to a pleasant ambient Light.
+vastly lower value, which makes the aquarium to a pleasant ambient light.
 
 You need
 
@@ -114,3 +114,19 @@ Arduino Nano clone.
 
 Now i have a step down module in between, which should output a 5V voltage. The
 measurement revealed 6.2V, but that's ok for the Arduino.
+
+How to connect the devices
+--------------------------
+
+The mosfet interrupts the ground wire. So connect the ground (white or black, -)
+of the power supply with the mosfet, the voltage regulator and the Arduino.
+Connect the 12V (red, +) with the input of step down module. Wire its 5V output
+with the Vin of the Arduino. Now the Arduino should work.
+
+Connect the Arduino D9 pin with the mosfet. And take the third pin of the mosfet
+with the ground of the led strip. And at last connect the 12V of the power
+supply with the + wire of the led strip.
+
+You could use more than one led strip in parallel. I use 4 parts with 45cm each
+in my setup. Perhaps its possible to assemble all these things on a breadboard.
+And its nice to test. But then solder it together to make it durable.
